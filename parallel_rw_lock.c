@@ -235,7 +235,6 @@ void *thread_operation(void *rank) {
 
 // execute operations on linked list
 double run_experiment() {
-    srand((unsigned) time(NULL));
     generate_operations(); // randomize operations
 
     pthread_t *thread_handles;
@@ -315,6 +314,7 @@ void program_help(char *program_name) {
 
 
 int main(int argc, char *argv[]) {
+    srand((unsigned) time(NULL));
     initialize(argc, argv);
 
     double total_time = 0.0;

@@ -178,7 +178,6 @@ int rand_int(int n) {
 
 // execute operations on linked list
 double run_experiment() {
-    srand((unsigned) time(NULL));
     generate_operations(); // randomize operations
 
     struct list_node_s *head = NULL;
@@ -252,6 +251,7 @@ void program_help(char *program_name) {
 
 
 int main(int argc, char *argv[]) {
+    srand((unsigned) time(NULL));
     initialize(argc, argv);
 
     double total_time = 0.0;
