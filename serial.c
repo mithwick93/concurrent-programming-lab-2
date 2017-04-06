@@ -277,9 +277,6 @@ int main(int argc, char *argv[]) {
 
         double standard_deviation = sqrt(variance / (sample_size - 1));
         printf("Standard deviation = %.10f seconds\n", standard_deviation);
-
-        double sample_size_n = pow(((100 * 1.96 * standard_deviation) / (5 * average_time)), 2);
-        printf("Required samples size = %.10f \n", sample_size_n);
     }
 
     return 0;
