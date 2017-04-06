@@ -47,4 +47,5 @@ fabric.properties
 
 .idea/*
 cmake-build-debug/*
+CMakeLists.txt
 
