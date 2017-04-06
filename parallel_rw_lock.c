@@ -45,8 +45,6 @@ int insert(int value, struct list_node_s **head_pp);
 
 int delete(int value, struct list_node_s **head_pp);
 
-void destroy(struct list_node_s **head_pp);
-
 // helper function definitions
 void generate_operations();
 
@@ -131,19 +129,6 @@ int delete(int value, struct list_node_s **head_pp) {
     }
 }
 
-// linked list destroy
-void destroy(struct list_node_s **head_pp) {
-    struct list_node_s *current = *head_pp;
-    struct list_node_s *next;
-
-    while (current != NULL) {
-        next = current->next;
-        free(current);
-        current = next;
-    }
-
-    *head_pp = NULL;
-}
 
 // Generate operations
 void generate_operations() {
@@ -270,7 +255,8 @@ double run_experiment() {
 
     // free memory
     free(thread_handles);
-    destroy(&head);
+    free(head);
+    head = NULL;
 
     return elapsed;
 }
